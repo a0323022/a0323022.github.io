@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "..\\..\\..\\..\\Documents\\GooglePython\\google-python-exercises\\google-python-exercises"
+		},
+		{
+			"path": "."
 		}
 	],
 	"settings": {}
