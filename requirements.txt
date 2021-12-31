@@ -1,0 +1,7 @@
+Let the guys log in
+store their emails
+email them by ?Wednesday? that they need to log in and select whether or not they are golfing (SA and SU)
+collect their checkbox activity for the week by ?when?
+send an email to Dave with the names of people playing or better yet, send the email directly to Kyle
+Maybe - capture email from Kyle, read the dates and times and then:
+send an email to the group with the names of people playing
