@@ -1,31 +1,20 @@
-from flask import Flask
-from helper import pets
+from flask import Flask, render_template
+#from helper import recipes, descriptions, ingredients, instructions
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route("/")
 def index():
-  return f'''
-  <h1>Adopt a Pet!</h1>
-  <p>Browse through the links below to find your new furry friend:</p>
-  <ul>
-  <li><a href='/animals/dogs'>Dogs</a></li>
-  <li><a href='/animals/cats'>Cats</a></li>
-  <li><a href='/animals/rabbits'>Rabbits</a></li>
-  </ul>
-  '''
+  return render_template("index.html")
 
-@app.route("/animals/<pet_type>")
-def animals(pet_type):
-  html = f"<h1>List of {pet_type}</h1>"
-  html += "<ul>"
-  for idx, item in enumerate(pets[pet_type]):
-    html += "<li>" + f'<a href="/animals/{pet_type}/{idx}">' + item["name"] + "</a></li>"
-  html += "</ul>"
-  return html
+#@app.route("/recipe/<int:id>", methods=["GET", "POST"])
+#def recipe(id):
+#  return render_template("recipe.html", template_recipe=recipes[id], template_description=descriptions[id], template_ingredients=ingredients[id], template_instructions=instructions[id])
 
-@app.route("/animals/<pet_type>/int:<pet_id>")
-def pet(pet_type, pet_id):
-  pet = pets[pet_type][pet_id]
-  return f"<h1>{pet}</h1>"
-  print({pet})
+@app.route("/about")
+def about():
+  return render_template("about.html")
+
+@app.route("/recipe")
+def recipe():
+    return render_template("recipe.html")
